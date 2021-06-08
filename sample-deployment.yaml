@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nlb-deployment
+  labels:
+    app: nlbtest
+spec:
+  selector:
+    matchLabels:
+      app: nlbtest
+  template:
+    metadata:
+      labels:
+        app: nlbtest
+    spec:
+      containers:
+        - name: nlbtest
+          image: <specify application image>
+          ports:
+            - name: nlbtest
+              containerPort: <specifyapplication port>
+              protocol: TCP
